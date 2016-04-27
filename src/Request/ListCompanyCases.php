@@ -12,7 +12,7 @@ use Easir\SDK\Response\ListCompanyCases as ListCompanyCasesResponse;
  *
  * @package Easir\SDK\Request
  */
-class ListCompanyAccounts extends Request
+class ListCompanyCases extends Request
 {
     protected $url = '/cases?q=%s';
     public $method = 'GET';
