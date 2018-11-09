@@ -5,17 +5,14 @@ namespace Easir\SDK\Request;
 use Easir\SDK\Exception\RequestException;
 use Easir\SDK\Request;
 use Easir\SDK\Response\ListFields as ListFieldsResponse;
+use Easir\SDK\Request\Model\GetField;
 
 class GetFields extends Request
 {
     /**
      * @var string
      */
-    protected $url = '/fields';
-    /**
-     * @var string
-     */
-    protected $urlSuffix = '';
+    protected $url = '/fields/';
     /**
      * @var string
      */
@@ -24,6 +21,10 @@ class GetFields extends Request
      * @var string
      */
     public $responseClass = ListFieldsResponse::class;
+    /**
+     * @var string
+     */
+    protected $modelClass = GetField::class;
 
     /**
      * @throws RequestException
@@ -31,6 +32,6 @@ class GetFields extends Request
      */
     public function getUrl()
     {
-        return $this->url . $this->urlSuffix;
+        return $this->url . (string)$this->model->field;
     }
 }
