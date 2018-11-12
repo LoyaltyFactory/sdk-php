@@ -5,7 +5,7 @@ namespace Easir\SDK\Request\Model;
 class ListCompanyUsers extends Search
 {
     /**
-     * @var integer
+     * @var int
      */
     public $company_id;
 }

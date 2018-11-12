@@ -1,3 +1,23 @@
+0.19.0
+Added support for DELETE /accounts/:account_id/contacts/:contact_id
+Added support for PUT /accounts/:account_id/contacts/:contact_id
+
+0.18.0
+Added support for PUT /accounts/:account_id/contacts/:contact_id/consent
+Added support for GET /accounts/:account_id/contacts/:contact_id
+
+0.17.0
+Added support for GET /accounts/{account_id}
+Added support for GET /accounts/{account_id}/cases
+
+0.16.0
+Changed Client to return unhandled/raw response
+Added support for PUT /groups/{group_id}/teams/{team_id}
+Added support for PUT /teams/{team_id}/users/{user_id}
+Added support for POST /groups
+Added support for DELETE /companies/{company_id}/users/{user_id}
+Added support for DELETE /teams/{team_id}/users/{user_id}
+
 0.15.0
 Removed /Model/LeadData it did not map lead data correctly
 Added more parameters for GET /accounts and renamed class

@@ -12,7 +12,7 @@ class GetTeams extends Request
     /**
      * @var string
      */
-    protected $url = '/teams?page=%d&per_page=%d&q=%s&team_type=%s&sort_by=%s&sort_direction=%s&group_id=%d';
+    protected $url = '/companies/%d/teams?page=%d&per_page=%d&q=%s&team_type=%s&sort_by=%s&sort_direction=%s&group_id=%d';
     /**
      * @var string
      */
@@ -35,6 +35,7 @@ class GetTeams extends Request
         $this->checkModel();
 
         return sprintf(parent::getUrl(),
+            (int)$this->model->company_id,
             (int)$this->model->page,
             (int)$this->model->perPage,
             urlencode((string)$this->model->searchTerm),

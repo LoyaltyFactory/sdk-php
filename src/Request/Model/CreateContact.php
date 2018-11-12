@@ -13,11 +13,11 @@ class CreateContact extends Model
         'custom_fields' => 'custom_field'
     ];
     /**
-     * @var integer
+     * @var int
      */
     public $user_id;
     /**
-     * @var integer
+     * @var int
      */
     public $team_id;
     /**

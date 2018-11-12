@@ -4,18 +4,14 @@ namespace Easir\SDK\Request\Model;
 
 use Easir\SDK\Request\Model;
 
-class Search extends Model
+class AttachTeamToGroup extends Model
 {
     /**
-     * @var string
+     * @var int
      */
-    public $searchTerm = '';
+    public $group_id;
     /**
      * @var int
      */
-    public $page = 1;
-    /**
-     * @var int
-     */
-    public $perPage = 15;
+    public $team_id;
 }

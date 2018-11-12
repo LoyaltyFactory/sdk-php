@@ -2,14 +2,14 @@
 
 namespace Easir\SDK\Request\Model;
 
-class UpdateContact extends CreateContact
+class GetAccountCases extends Search
 {
     /**
      * @var string
      */
-    public $contact_id;
+    public $account_id;
     /**
      * @var string
      */
-    public $old_account_id;
+    public $status;
 }

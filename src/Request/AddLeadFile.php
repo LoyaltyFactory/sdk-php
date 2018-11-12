@@ -5,15 +5,14 @@ namespace Easir\SDK\Request;
 use Easir\SDK\Exception\RequestException;
 use Easir\SDK\Request;
 use Easir\SDK\Request\Model as RequestModel;
-use Easir\SDK\Request\Model\CreateAttachment as CreateAttachmentModel;
 use Easir\SDK\Model\Attachment;
 
-class CreateAttachment extends Request
+class AddLeadFile extends Request
 {
     /**
      * @var string
      */
-    protected $url = '/filemanager/files/%s';
+    protected $url = '/leads/%s/files';
     /**
      * @var string
      */
@@ -25,7 +24,7 @@ class CreateAttachment extends Request
     /**
      * @var string
      */
-    protected $modelClass = CreateAttachmentModel::class;
+    protected $modelClass = RequestModel\AddLeadFile::class;
     /**
      * @var array
      */
@@ -53,6 +52,6 @@ class CreateAttachment extends Request
      */
     public function getUrl()
     {
-        return sprintf(parent::getUrl(), (string)$this->model->belongs_to);
+        return sprintf(parent::getUrl(), (string)$this->model->id);
     }
 }

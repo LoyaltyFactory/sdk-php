@@ -4,24 +4,12 @@ namespace Easir\SDK\Model;
 
 use Easir\SDK\Response;
 
-class Contact extends Response
+class OriginalAccount extends Response
 {
     /**
      * @var array
      */
     protected $collections = ['fixed_fields' => 'fixed_field', 'custom_fields' => 'custom_field'];
-    /**
-     * @var string
-     */
-    public $id;
-    /**
-     * @var bool
-     */
-    public $b2c;
-    /**
-     * @var int
-     */
-    public $team_id;
     /**
      * @var FixedField[]
      */
@@ -30,12 +18,4 @@ class Contact extends Response
      * @var CustomField[]
      */
     public $custom_fields;
-    /**
-     * @var string
-     */
-    public $created_at;
-    /**
-     * @var string
-     */
-    public $updated_at;
 }

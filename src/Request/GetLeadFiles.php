@@ -5,14 +5,14 @@ namespace Easir\SDK\Request;
 use Easir\SDK\Exception\RequestException;
 use Easir\SDK\Request;
 use Easir\SDK\Request\Model\GetById;
-use Easir\SDK\Model\Team;
+use Easir\SDK\Response\GetLeadFiles as GetLeadFilesResponse;
 
-class GetTeam extends Request
+class GetLeadFiles extends Request
 {
     /**
      * @var string
      */
-    protected $url = '/companies/%d/teams/%d';
+    protected $url = '/leads/%s/files';
     /**
      * @var string
      */
@@ -20,7 +20,7 @@ class GetTeam extends Request
     /**
      * @var string
      */
-    public $responseClass = Team::class;
+    public $responseClass = GetLeadFilesResponse::class;
     /**
      * @var string
      */
@@ -34,6 +34,6 @@ class GetTeam extends Request
     {
         $this->checkModel();
 
-        return sprintf(parent::getUrl(), (int)$this->model->company_id, (int)$this->model->id);
+        return sprintf(parent::getUrl(), (string)$this->model->id);
     }
 }

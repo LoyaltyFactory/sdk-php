@@ -7,11 +7,15 @@ use Easir\SDK\Request\Model;
 class CreateCase extends Model
 {
     /**
-     * @var integer
+     * @var int
      */
     public $user_id;
     /**
-     * @var integer
+     * @var int
+     */
+    public $team_id;
+    /**
+     * @var int
      */
     public $contact_id;
     /**

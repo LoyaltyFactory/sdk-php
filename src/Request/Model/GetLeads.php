@@ -2,14 +2,14 @@
 
 namespace Easir\SDK\Request\Model;
 
-class UpdateContact extends CreateContact
+class GetLeads extends Search
 {
     /**
      * @var string
      */
-    public $contact_id;
+    public $sort_by;
     /**
      * @var string
      */
-    public $old_account_id;
+    public $sort_direction;
 }

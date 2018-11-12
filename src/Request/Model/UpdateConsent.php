@@ -4,26 +4,22 @@ namespace Easir\SDK\Request\Model;
 
 use Easir\SDK\Request\Model;
 
-class Auth extends Model
+class UpdateConsent extends Model
 {
     /**
-     * @var int
+     * @var string
      */
-    public $client_id;
+    public $account_id;
     /**
      * @var string
      */
-    public $client_secret;
+    public $contact_id;
     /**
      * @var string
      */
-    public $refresh_token;
+    public $type;
     /**
-     * @var string
+     * @var bool|null
      */
-    public $username;
-    /**
-     * @var string
-     */
-    public $password;
+    public $status;
 }

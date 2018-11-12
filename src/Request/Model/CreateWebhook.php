@@ -13,7 +13,7 @@ class CreateWebhook extends Model
     /**
      * @var string
      */
-    public $event;
+    public $webhook_event;
     /**
      * @var string
      */

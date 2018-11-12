@@ -3,16 +3,16 @@
 namespace Easir\SDK\Request;
 
 use Easir\SDK\Exception\RequestException;
+use Easir\SDK\Model\Account;
 use Easir\SDK\Request;
 use Easir\SDK\Request\Model\GetById;
-use Easir\SDK\Model\Team;
 
-class GetTeam extends Request
+class GetAccount extends Request
 {
     /**
      * @var string
      */
-    protected $url = '/companies/%d/teams/%d';
+    protected $url = '/accounts/%s';
     /**
      * @var string
      */
@@ -20,7 +20,7 @@ class GetTeam extends Request
     /**
      * @var string
      */
-    public $responseClass = Team::class;
+    public $responseClass = Account::class;
     /**
      * @var string
      */
@@ -34,6 +34,6 @@ class GetTeam extends Request
     {
         $this->checkModel();
 
-        return sprintf(parent::getUrl(), (int)$this->model->company_id, (int)$this->model->id);
+        return sprintf(parent::getUrl(), urlencode((string)$this->model->id));
     }
 }

@@ -6,7 +6,14 @@ use Easir\SDK\Model;
 
 abstract class Field extends Model
 {
-    public $name, $value;
+    /**
+     * @var string
+     */
+    public $name;
+    /**
+     * @var string
+     */
+    public $value;
 
     /**
      * @param string $name

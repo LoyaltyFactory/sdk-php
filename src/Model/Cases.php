@@ -6,5 +6,32 @@ use Easir\SDK\Response;
 
 class Cases extends Response
 {
-    public $id, $user_id, $contact_id, $relations_path_id, $notify_user, $created_at, $updated_at;
+    /**
+     * @var string
+     */
+    public $id;
+    /**
+     * @var int
+     */
+    public $user_id;
+    /**
+     * @var string
+     */
+    public $contact_id;
+    /**
+     * @var string
+     */
+    public $relations_path_id;
+    /**
+     * @var bool
+     */
+    public $notify_user;
+    /**
+     * @var string
+     */
+    public $created_at;
+    /**
+     * @var string
+     */
+    public $updated_at;
 }

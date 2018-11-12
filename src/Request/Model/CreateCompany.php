@@ -2,6 +2,9 @@
 
 namespace Easir\SDK\Request\Model;
 
+use Easir\SDK\Model\Billing;
+use Easir\SDK\Model\Locale;
+use Easir\SDK\Model\Timezone;
 use Easir\SDK\Request\Model;
 
 class CreateCompany extends Model
@@ -11,41 +14,17 @@ class CreateCompany extends Model
      */
     public $name;
     /**
-     * @var string
+     * @var Timezone
      */
-    public $timezone = 'Europe/Copenhagen';
-    /**
-     * @var string
-     */
-    public $address_1;
-    /**
-     * @var string
-     */
-    public $address_2;
-    /**
-     * @var string
-     */
-    public $zip_code;
-    /**
-     * @var string
-     */
-    public $city;
-    /**
-     * @var string
-     */
-    public $state;
-    /**
-     * @var string
-     */
-    public $country = 'dk';
+    public $timezone;
     /**
      * @var string
      */
     public $vat;
     /**
-     * @var string
+     * @var Billing
      */
-    public $invoice_email;
+    public $billing;
     /**
      * @var string
      */
@@ -55,9 +34,9 @@ class CreateCompany extends Model
      */
     public $website;
     /**
-     * @var string
+     * @var Locale
      */
-    public $locale = 'da-DK';
+    public $locale;
     /**
      * @var string
      */

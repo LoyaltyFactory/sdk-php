@@ -4,18 +4,18 @@ namespace Easir\SDK\Request\Model;
 
 use Easir\SDK\Request\Model;
 
-class Search extends Model
+class AddLeadFile extends Model
 {
     /**
      * @var string
      */
-    public $searchTerm = '';
+    public $name;
     /**
-     * @var int
+     * @var resource
      */
-    public $page = 1;
+    public $contents;
     /**
-     * @var int
+     * @var string
      */
-    public $perPage = 15;
+    public $filename;
 }

@@ -3,28 +3,23 @@
 namespace Easir\SDK\Request;
 
 use Easir\SDK\Exception\RequestException;
-use Easir\SDK\Model\Cases;
 use Easir\SDK\Request;
-use Easir\SDK\Request\Model\GetById;
+use Easir\SDK\Request\Model\AttachUserToTeam as AttachUserToTeamRequestModel;
 
-class GetCases extends Request
+class AttachUserToTeam extends Request
 {
     /**
      * @var string
      */
-    protected $url = '/cases/%s';
+    protected $url = '/teams/%d/users/%d';
     /**
      * @var string
      */
-    public $method = 'GET';
+    public $method = 'PUT';
     /**
      * @var string
      */
-    public $responseClass = Cases::class;
-    /**
-     * @var string
-     */
-    protected $modelClass = GetById::class;
+    protected $modelClass = AttachUserToTeamRequestModel::class;
 
     /**
      * @throws RequestException
@@ -34,6 +29,6 @@ class GetCases extends Request
     {
         $this->checkModel();
 
-        return sprintf(parent::getUrl(), $this->model->id);
+        return sprintf(parent::getUrl(), (int)$this->model->team_id, (int)$this->model->user_id);
     }
 }

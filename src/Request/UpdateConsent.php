@@ -4,15 +4,15 @@ namespace Easir\SDK\Request;
 
 use Easir\SDK\Exception\RequestException;
 use Easir\SDK\Request;
-use Easir\SDK\Request\Model\UpdateContact as UpdateContactRequestModel;
-use Easir\SDK\Model\Contact;
+use Easir\SDK\Request\Model\UpdateConsent as UpdateConsentRequestModel;
+use Easir\SDK\Model\Consent;
 
-class UpdateContact extends Request
+class UpdateConsent extends Request
 {
     /**
      * @var string
      */
-    protected $url = '/accounts/%s/contacts/%s';
+    protected $url = '/accounts/%s/contacts/%s/consent';
     /**
      * @var string
      */
@@ -20,11 +20,11 @@ class UpdateContact extends Request
     /**
      * @var string
      */
-    public $responseClass = Contact::class;
+    public $responseClass = Consent::class;
     /**
      * @var string
      */
-    protected $modelClass = UpdateContactRequestModel::class;
+    protected $modelClass = UpdateConsentRequestModel::class;
 
     /**
      * @throws RequestException
@@ -36,7 +36,7 @@ class UpdateContact extends Request
 
         return sprintf(
             parent::getUrl(),
-            urlencode((string)$this->model->old_account_id),
+            urlencode((string)$this->model->account_id),
             urlencode((string)$this->model->contact_id)
         );
     }

@@ -2,6 +2,8 @@
 
 namespace Easir\SDK\Request\Model;
 
+use Easir\SDK\Model\Locale;
+use Easir\SDK\Model\Timezone;
 use Easir\SDK\Request\Model;
 
 class CreateTeam extends Model
@@ -11,9 +13,9 @@ class CreateTeam extends Model
      */
     public $name;
     /**
-     * @var string
+     * @var Timezone
      */
-    public $timezone = 'Europe/Copenhagen';
+    public $timezone;
     /**
      * @var string
      */
@@ -51,9 +53,9 @@ class CreateTeam extends Model
      */
     public $vat;
     /**
-     * @var string
+     * @var Locale
      */
-    public $locale = 'da-DK';
+    public $locale;
     /**
      * @var string
      */
@@ -66,4 +68,8 @@ class CreateTeam extends Model
      * @var bool
      */
     public $use_social_lookup;
+    /**
+     * @var array
+     */
+    public $fields;
 }

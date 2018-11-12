@@ -102,7 +102,7 @@ class Lead extends Response
      */
     public $case_id;
     /**
-     * @var string
+     * @var OriginalAccount
      */
     public $original_account;
     /**
@@ -114,7 +114,7 @@ class Lead extends Response
      */
     public $account;
     /**
-     * @var string
+     * @var OriginalContact
      */
     public $original_contact;
     /**

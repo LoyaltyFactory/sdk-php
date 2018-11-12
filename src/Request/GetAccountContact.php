@@ -4,19 +4,19 @@ namespace Easir\SDK\Request;
 
 use Easir\SDK\Exception\RequestException;
 use Easir\SDK\Request;
-use Easir\SDK\Request\Model\CreateContact as CreateContactRequestModel;
+use Easir\SDK\Request\Model\GetContact as GetContactModel;
 use Easir\SDK\Model\Contact;
 
-class CreateContact extends Request
+class GetAccountContact extends Request
 {
     /**
      * @var string
      */
-    protected $url = '/accounts/%s/contacts';
+    protected $url = '/accounts/%s/contacts/%s';
     /**
      * @var string
      */
-    public $method = 'POST';
+    public $method = 'GET';
     /**
      * @var string
      */
@@ -24,7 +24,7 @@ class CreateContact extends Request
     /**
      * @var string
      */
-    protected $modelClass = CreateContactRequestModel::class;
+    protected $modelClass = GetContactModel::class;
 
     /**
      * @throws RequestException
@@ -34,6 +34,9 @@ class CreateContact extends Request
     {
         $this->checkModel();
 
-        return sprintf(parent::getUrl(), urlencode((string)$this->model->account_id));
+        return sprintf(parent::getUrl(),
+            urlencode((string)$this->model->account_id),
+            urlencode((string)$this->model->contact_id)
+        );
     }
 }

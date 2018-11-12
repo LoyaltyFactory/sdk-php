@@ -7,11 +7,11 @@ use Easir\SDK\Request\Model;
 class GetContact extends Model
 {
     /**
-     * @var integer
+     * @var string
      */
-    public $contactId;
+    public $account_id;
     /**
-     * @var integer
+     * @var string
      */
-    public $id;
+    public $contact_id;
 }

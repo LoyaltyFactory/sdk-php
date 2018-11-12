@@ -4,18 +4,18 @@ namespace Easir\SDK\Request\Model;
 
 use Easir\SDK\Request\Model;
 
-class Search extends Model
+class DeleteUser extends Model
 {
     /**
-     * @var string
+     * @var int
      */
-    public $searchTerm = '';
+    public $companyId;
     /**
      * @var int
      */
-    public $page = 1;
+    public $id;
     /**
      * @var int
      */
-    public $perPage = 15;
+    public $assignTo;
 }

@@ -4,10 +4,9 @@ namespace Easir\SDK\Request;
 
 use Easir\SDK\Exception\RequestException;
 use Easir\SDK\Request;
-use Easir\SDK\Request\Model\UpdateContact as UpdateContactRequestModel;
-use Easir\SDK\Model\Contact;
+use Easir\SDK\Request\Model\GetContact as DeleteContactRequestModel;
 
-class UpdateContact extends Request
+class DeleteAccountContact extends Request
 {
     /**
      * @var string
@@ -16,15 +15,11 @@ class UpdateContact extends Request
     /**
      * @var string
      */
-    public $method = 'PUT';
+    public $method = 'DELETE';
     /**
      * @var string
      */
-    public $responseClass = Contact::class;
-    /**
-     * @var string
-     */
-    protected $modelClass = UpdateContactRequestModel::class;
+    protected $modelClass = DeleteContactRequestModel::class;
 
     /**
      * @throws RequestException
@@ -34,9 +29,8 @@ class UpdateContact extends Request
     {
         $this->checkModel();
 
-        return sprintf(
-            parent::getUrl(),
-            urlencode((string)$this->model->old_account_id),
+        return sprintf(parent::getUrl(),
+            urlencode((string)$this->model->account_id),
             urlencode((string)$this->model->contact_id)
         );
     }

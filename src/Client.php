@@ -5,6 +5,7 @@ namespace Easir\SDK;
 use Easir\SDK\Exception\ClientException;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\RequestException;
+use Illuminate\Http\JsonResponse;
 
 class Client extends GuzzleClient
 {
@@ -68,12 +69,20 @@ class Client extends GuzzleClient
             throw $e;
         }
 
-        $responseClass = $request->responseClass;
-        if (!is_null($responseClass)) {
-            $response = $responseClass::createFromClientResponse($clientResponse);
+        if (isset($request->model->noHandling) && $request->model->noHandling) {
+            return [
+                'body' => json_decode($clientResponse->getBody()->getContents()),
+                'status' => $clientResponse->getStatusCode(),
+                'headers' => $clientResponse->getHeaders(),
+            ];
         } else {
-            // We don't have a response object so lets just show the raw json response
-            $response = json_decode($clientResponse->getBody()->getContents());
+            $responseClass = $request->responseClass;
+            if (!is_null($responseClass)) {
+                $response = $responseClass::createFromClientResponse($clientResponse);
+            } else {
+                // We don't have a response object so lets just show the raw json response
+                $response = json_decode($clientResponse->getBody()->getContents());
+            }
         }
 
         return $response;

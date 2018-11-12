@@ -2,6 +2,8 @@
 
 namespace Easir\SDK\Request\Model;
 
+use Easir\SDK\Model\Locale;
+use Easir\SDK\Model\Timezone;
 use Easir\SDK\Request\Model;
 
 class CreateUser extends Model
@@ -31,9 +33,9 @@ class CreateUser extends Model
      */
     public $phone_number;
     /**
-     * @var string
+     * @var Timezone
      */
-    public $timezone = 'Europe/Copenhagen';
+    public $timezone;
     /**
      * @var array
      */
@@ -43,9 +45,9 @@ class CreateUser extends Model
      */
     public $role_ids;
     /**
-     * @var string
+     * @var Locale
      */
-    public $locale = 'da-DK';
+    public $locale;
     /**
      * @var bool
      */
